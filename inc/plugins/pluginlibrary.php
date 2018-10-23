@@ -34,9 +34,10 @@ function pluginlibrary_info()
         "website"       => "http://mods.mybb.com/view/pluginlibrary",
         "author"        => "Andreas Klauer",
         "authorsite"    => "mailto:Andreas.Klauer@metamorpher.de",
-        "version"       => "12",
+        "version"       => "13",
         "guid"          => "839e9d72e2875a51fccbc0257dfeda03",
-        "compatibility" => "18*"
+        "compatibility" => "18*",
+        "codename"      => "pluginlibrary",
         );
 }
 
@@ -49,7 +50,7 @@ function pluginlibrary_is_installed()
 function pluginlibrary_install()
 {
     // Avoid unnecessary activation as a plugin with a friendly success message.
-    flash_message("The selected plugin does not have to be activated.", 'success');
+    flash_message("You have successfully installed PluginLibrary 13.", 'success');
     admin_redirect("index.php?module=config-plugins");
 }
 
@@ -72,7 +73,7 @@ class PluginLibrary
     /**
      * Version number.
      */
-    public $version = 12;
+    public $version = 13;
 
     /**
      * Cache handler.
@@ -960,7 +961,8 @@ class PluginLibrary
             return false;
         }
 
-        if(count($edits) && !count($edits[0]))
+        // Convert single edit into array of edits.
+        if(array_key_exists('search', $edits))
         {
             $edits = array($edits);
         }
@@ -1349,4 +1351,3 @@ global $PL;
 $PL = new PluginLibrary();
 
 /* --- End of file. --- */
-?>
