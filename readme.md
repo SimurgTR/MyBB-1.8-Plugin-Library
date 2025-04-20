@@ -3,6 +3,7 @@
 MyBB 1.8 sürümü için uyumlu hale getirilmiş mybb eklenti kütüphanesidir. Bu kütüphane sayesinde mybb için geliştirilmiş ve özel kütüphaneye ihtiyaç duyan eklentileri kullanabilirsiniz. Örneğin; MyBB Google Seo Eklentisi
 
 ##Kurulumu ve Kullanım
+
 **inc/plugins/pluginlibrary.php** dosyasını **inc/plugins/** klasörünüze yükleyin.
 
 Başka bir dosya veya adım gerektirmez.
